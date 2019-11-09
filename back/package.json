@@ -1,0 +1,8 @@
+{
+  "name": "entertainer",
+  "version": "1.0.0",
+  "dependencies": {
+    "mongodb": "^3.3.3",
+    "express": "^4.17.1"
+  }
+}
