@@ -1,0 +1,19 @@
+<div>
+    <img src="/image/icon.jpg" alt='icon' width="128" height="128">
+    <h3> <%= blog_title %> </h3>
+    <small> <%= name %> </small>
+    <hr>
+    <p> <%= intro %> </p>
+    <hr>
+    <h5>Newest Articles</h5>
+    <ul>
+        <% for (let i = 0; i < list.length; i++){ %>
+            <li>
+                <a href="blog/<%= list[i].id %>">
+                    <%= list[i].title %>
+                </a>
+            </li>
+        <% } %>
+    </ul>
+    <button>see all</button>
+</div>

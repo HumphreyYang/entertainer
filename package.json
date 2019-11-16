@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "mongodb": "^3.3.3",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "ejs": "^2.7.2",
+    "markdown-js": "^0.0.4"
   }
 }
