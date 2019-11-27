@@ -1,6 +1,7 @@
 exports.index = function (req, res, next) {
-    res.render("index", {blog_title: "Neil Kleist Gao's Blog",
-        name:"Neil Kleist Gao",
+    res.render("index", {
+        blog_title: "Neil Kleist Gao's Blog",
+        name: "Neil Kleist Gao",
         intro: "Hello! Welcome to my blog!",
         list: [{id: 0, title: "hello world"},
             {id: 1, title: "about engine"},

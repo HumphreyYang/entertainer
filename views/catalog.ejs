@@ -1,3 +1,60 @@
 <div>
-    <p>catalog</p>
+    <h2> <%= blog_title %> </h2>
+    <hr/>
+    <div>
+        <label>search:</label>
+        <select>
+            <option>title</option>
+            <option>content</option>
+            <option>tag</option>
+            <option>author</option>
+            <option>time</option>
+            <option>any</option>
+        </select>
+        <input type="text">
+        <br/>
+        <label>sort by:</label>
+            <form>
+                <input type="radio" checked> time(ascending order)
+                <input type="radio"> time(descending order)
+                <input type="radio"> title(ascending order)
+                <input type="radio"> title(descending order)
+            </form>
+        <hr/>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>title</th>
+                    <th>tag</th>
+                    <th>author</th>
+                    <th>time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i = 0; i < list.length; i++) { %>
+                    <tr>
+                        <td><a href="blog/<%= list[i].id %>"> <%= list[i].title %> </a></td>
+                        <td> <%= list[i].tag %> </td>
+                        <td> <%= list[i].author %> </td>
+                        <td> <%= list[i].time %> </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+
+        <hr/>
+        <div>
+            <button>&lt;</button>
+                <div>
+                    <% for (let i = 0; i < pages; i++) { %>
+                        <button> <%= i %> </button>
+                    <% } %>
+                    <% if (more) { %>
+                        <button>...</button>
+                    <% } %>
+                </div>
+            <button>&gt;</button>
+        </div>
+    </div>
 </div>
