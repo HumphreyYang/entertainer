@@ -1,3 +1,9 @@
 <div>
-    <p>blog</p>
+    <h2><%= article_title %></h2>
+    <h5>Author: <%= author %></h5>
+    <h5><%= time %></h5>
+    <hr>
+    <%- content %>
+    <hr>
+    <a href="<%= previous %>">←back</a>
 </div>

@@ -1,0 +1,27 @@
+<div>
+    <h3>update your blog</h3>
+    <hr>
+    <label>old password:</label>
+    <input type="password">
+    <label>new password:</label>
+    <input type="password">
+    <label>new password again:</label>
+    <input type="password">
+    <hr>
+    <label>head icon:</label>
+    <input type="file">
+    <label>background image:</label>
+    <input type="file">
+    <hr>
+    <label>article</label>
+    <ul>
+        <% for (let i = 0; i < list.length; i++) { %>
+            <li><%= list[i] %> <a href="#">remove</a></li>
+        <% } %>
+    </ul>
+    <label>upload new:</label>
+    <input type="file">
+    <hr>
+    <button>save</button>
+    <button>log out</button>
+</div>
