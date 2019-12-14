@@ -1,9 +1,20 @@
-<div>
-    <h2><%= article_title %></h2>
-    <h5>Author: <%= author %></h5>
-    <h5><%= time %></h5>
-    <hr>
-    <%- content %>
-    <hr>
-    <a href="<%= previous %>">←back</a>
-</div>
+<html>
+    <head>
+        <title><%= article_title %></title>
+        <link rel="stylesheet" href="/css/ragtime.css">
+        <link rel="stylesheet" href="/css/prism.css">
+        <script src="/js/prism.js"></script>
+    </head>
+    <body>
+        <div class="full-box">
+            <h2 class="article-title"><%= article_title %></h2>
+            <h5 class="article-sub">Author: <%= author %></h5>
+            <h5 class="article-sub"><%= time %></h5>
+            <hr>
+            <div class="content">
+                <%- content %>
+            </div>
+            <br>
+        </div>
+    </body>
+</html>

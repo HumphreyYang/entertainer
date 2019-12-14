@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>entertainer: update your blog</title>
+
+        <link rel="stylesheet" href="/css/ragtime.css">
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+        <script src="/js/update.js"></script>
+    </head>
+    <body>
+        <div class="full-box">
+            <h3 class="blog-title top-left-head">update your blog</h3>
+            <hr>
+            <form enctype="multipart/form-data" id="upload">
+                <label class="form-label">title:</label>
+                <input class="text-box" name="title" id="title" value="<%= title %>">
+                <br>
+                <br>
+                <label class="form-label">sub title:</label>
+                <input class="text-box" id="subtitle" value="<%= subtitle %>">
+                <hr>
+                <label class="form-label">old password:</label>
+                <input class="text-box" id="opwd" type="password">
+                <br>
+                <br>
+                <label class="form-label">new password:</label>
+                <input class="text-box" id="pwd" type="password">
+                <br>
+                <br>
+                <label class="form-label">new password again:</label>
+                <input class="text-box" id="npwd" type="password">
+                <hr>
+                <label class="form-label">head icon:</label>
+                <input id="icon" type="file" accept="image/gif,image/png,image/jpeg">
+                <br>
+                <label class="form-label">background image:</label>
+                <input id="back" type="file" accept="image/jpeg,image/png">
+                <hr>
+                <label class="form-label">articles:</label>
+                <ul id="articles">
+                    <% for (let i = 0; i < list.length; i++) { %>
+                        <li class="list-item"><a href="/blog/<%= list[i].id %>"><%= list[i].title %></a> <button class="remove_button delete-button" id="<%= list[i].id %>">x</button></li>
+                    <% } %>
+                </ul>
+                <label class="form-label">upload new(as markdown file):</label>
+                <input id="md" type="file">
+                <br>
+                <br>
+                <label class="form-label">blog title:</label>
+                <input class="text-box" id="name">
+                <label class="form-label">author:</label>
+                <input class="text-box" id="author">
+                <label class="form-label">tags:</label>
+                <input class="text-box" id="tags">
+                <hr>
+                <div class="center-button">
+                    <button id="save" class="control-button">save</button>
+                    <button id="logout" class="control-button">log out</button>
+                    <br>
+                    <small id="success" class="success-text">save successfully</small>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

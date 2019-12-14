@@ -1,60 +1,57 @@
-<div>
-    <h2> <%= blog_title %> </h2>
-    <hr/>
-    <div>
-        <label>search:</label>
-        <select>
-            <option>title</option>
-            <option>content</option>
-            <option>tag</option>
-            <option>author</option>
-            <option>time</option>
-            <option>any</option>
-        </select>
-        <input type="text">
-        <br/>
-        <label>sort by:</label>
-            <form>
-                <input type="radio" checked> time(ascending order)
-                <input type="radio"> time(descending order)
-                <input type="radio"> title(ascending order)
-                <input type="radio"> title(descending order)
-            </form>
-        <hr/>
+<html>
+    <head>
+        <title><%= blog_title %>: Search</title>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>title</th>
-                    <th>tag</th>
-                    <th>author</th>
-                    <th>time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for (let i = 0; i < list.length; i++) { %>
+        <link rel="stylesheet" href="/css/ragtime.css">
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+        <script src="/js/catalog.js"></script>
+    </head>
+    <body>
+        <div class="full-box">
+            <h2 class="blog-title top-left-head"> <%= blog_title %> </h2>
+            <hr/>
+            <div>
+                <label class="form-label">search:</label>
+                <select id="key" class="select-box">
+                    <option id="any" value="any">any</option>
+                    <option id="title" value="title">title</option>
+                    <option id="content" value="content">content</option>
+                    <option id="tags" value="tags">tags</option>
+                    <option id="author" value="author">author</option>
+                    <option id="time" value="time">time</option>
+                </select>
+                <input type="text" id="content_text" class="text-box">
+                <br/>
+                <label class="form-label">sort by:</label>
+                <form class="form-radio">
+                    <label><input class="radio-box" id="tma" type="radio" name="order" value="1" checked> time(ascending order)</label>
+                    <label><input class="radio-box" id="tmd" type="radio" name="order" value="2"> time(descending order)</label>
+                    <label><input class="radio-box" id="tta" type="radio" name="order" value="3"> title(ascending order)</label>
+                    <label><input class="radio-box" id="ttd" type="radio" name="order" value="4"> title(descending order)</label>
+                </form>
+                <hr/>
+
+                <table>
+                    <thead>
                     <tr>
-                        <td><a href="blog/<%= list[i].id %>"> <%= list[i].title %> </a></td>
-                        <td> <%= list[i].tag %> </td>
-                        <td> <%= list[i].author %> </td>
-                        <td> <%= list[i].time %> </td>
+                        <th>title</th>
+                        <th>tag</th>
+                        <th>author</th>
+                        <th>time</th>
                     </tr>
-                <% } %>
-            </tbody>
-        </table>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
 
-        <hr/>
-        <div>
-            <button>&lt;</button>
-                <div>
-                    <% for (let i = 0; i < pages; i++) { %>
-                        <button> <%= i %> </button>
-                    <% } %>
-                    <% if (more) { %>
-                        <button>...</button>
-                    <% } %>
+                <hr/>
+                <div class="center-button">
+                    <button id="next" class="page-item page-button">&lt;</button>
+                    <div id="page" class="page-item">
+                    </div>
+                    <button id="prev" class="page-item page-button">&gt;</button>
                 </div>
-            <button>&gt;</button>
+            </div>
         </div>
-    </div>
-</div>
+    </body>
+</html>

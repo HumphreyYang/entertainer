@@ -1,19 +1,30 @@
-<div>
-    <img src="/image/icon.jpg" alt='icon' width="128" height="128">
-    <h3> <%= blog_title %> </h3>
-    <small> <%= name %> </small>
-    <hr>
-    <p> <%= intro %> </p>
-    <hr>
-    <h5>Newest Articles</h5>
-    <ul>
-        <% for (let i = 0; i < list.length; i++){ %>
-            <li>
-                <a href="blog/<%= list[i].id %>">
-                    <%= list[i].title %>
-                </a>
-            </li>
-        <% } %>
-    </ul>
-    <button>see all</button>
-</div>
+<html>
+    <head>
+        <title><%= blog_title %></title>
+        <link href="/css/ragtime.css" rel="stylesheet">
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+        <script src="/js/index.js"></script>
+    </head>
+    <body>
+        <div class="center-box">
+            <div class="center-text">
+                <img src="/image/icon.png" alt='icon' class="round-image">
+                <h3 class="blog-title"> <%= blog_title %> </h3>
+                <hr>
+                <p class="blog-subtitle"> <%= intro %> </p>
+                <hr>
+            </div>
+            <h5 class="block-head">Newest Articles</h5>
+            <ul>
+                <% for (let i = 0; i < list.length; i++){ %>
+                    <li class="list-item">
+                        <a href="blog/<%= list[i].id %>">
+                            <%= list[i].title %>
+                        </a>
+                    </li>
+                <% } %>
+            </ul>
+            <button id="next" class="right-align link-button">see all</button>
+        </div>
+    </body>
+</html>

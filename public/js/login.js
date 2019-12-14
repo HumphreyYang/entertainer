@@ -1,13 +1,13 @@
 $(document).ready(function () {
     $("#submit").click(function () {
         let val = $("#pwd").val();
-        $.post("/joplin/sit/" + val,
+        $.post("/super/sit/" + val,
            function (data, status) {
                 if (JSON.parse(data)["status"] === "yes") {
-                    window.location.href = "/joplin/update";
+                    window.location.href = "/super/update";
                 }
                 else {
-                    //TODO:
+                    $("#wrong").css('visibility','visible');
                 }
            });
     });
